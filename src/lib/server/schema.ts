@@ -5,5 +5,5 @@ export const users = sqliteTable('users', {
   githubId: integer('github_id').notNull().primaryKey(),
     githubLogin: text('github_login').notNull(),
     githubAvatarUrl: text('github_avatar_url').notNull(),
-    
+  
 });
