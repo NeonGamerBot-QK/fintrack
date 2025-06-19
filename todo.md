@@ -1,0 +1,12 @@
+# list
+- [ ] make drizzle db setup
+- [ ] push gh repo public
+- [ ] make gh oauth work
+- [ ] make it auto star repo 
+- [ ] make project browser good 
+- [ ] make project browser look nice
+- [ ] ship it
+- if viral: 
+- [ ] work on colab features
+- [ ] ai features
+- [ ] good seo.
