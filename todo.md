@@ -1,5 +1,5 @@
 # list
-- [ ] make drizzle db setup
+- [ ] make prisma db setup
 - [ ] push gh repo public
 - [ ] make gh oauth work
 - [ ] make it auto star repo 
