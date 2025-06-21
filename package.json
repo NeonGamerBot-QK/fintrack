@@ -22,10 +22,12 @@
   },
   "dependencies": {
     "@libsql/client": "^0.15.9",
+    "@mdi/js": "^7.4.47",
     "@tailwindcss/vite": "^4.1.10",
     "daisyui": "^5.0.43",
     "drizzle-kit": "^0.31.1",
-    "drizzle-orm": "^0.44.2",
+    "mdi-svelte": "^1.1.2",
+    "prisma": "^6.10.1",
     "tailwindcss": "^4.1.10"
   }
 }
