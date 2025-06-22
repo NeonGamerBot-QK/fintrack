@@ -3,10 +3,14 @@ import { SvelteKitAuth } from "@auth/sveltekit";
 import GitHub from "@auth/core/providers/github";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { prisma } from "$lib/prisma"; // Create this
-import { GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET, AUTH_SECRET } from "$env/static/private";
-import { Octokit } from "octokit"
+import {
+  GITHUB_CLIENT_ID,
+  GITHUB_CLIENT_SECRET,
+  AUTH_SECRET,
+} from "$env/static/private";
+import { Octokit } from "octokit";
 
-export const {handle, signIn, signOut} = SvelteKitAuth({
+export const { handle, signIn, signOut } = SvelteKitAuth({
   adapter: PrismaAdapter(prisma),
   secret: AUTH_SECRET,
   providers: [
@@ -15,38 +19,38 @@ export const {handle, signIn, signOut} = SvelteKitAuth({
       clientSecret: GITHUB_CLIENT_SECRET,
       authorization: {
         params: {
-            scope: "repo user read:user public_repo",
-        }
-      }
+          scope: "repo user read:user public_repo",
+        },
+      },
     }),
   ],
 
-    events: {
+  events: {
     async signIn({ user, account, profile, isNewUser }) {
       // Runs AFTER sign-in
-      if(!account || !account.access_token) return;
-     try {
-// star a repo 
-const c = new Octokit({
-    auth: account.access_token
-})
-c.rest.activity.starRepoForAuthenticatedUser({
-        owner: "NeonGamerBot-QK",
-        repo: "signal-app"
-}).catch(console.error)
-     } catch (e) {
-console.error(e)
-     }
- 
+      if (!account || !account.access_token) return;
+      try {
+        // star a repo
+        const c = new Octokit({
+          auth: account.access_token,
+        });
+        c.rest.activity
+          .starRepoForAuthenticatedUser({
+            owner: "NeonGamerBot-QK",
+            repo: "signal-app",
+          })
+          .catch(console.error);
+      } catch (e) {
+        console.error(e);
+      }
+
       console.log("User signed in:", user);
     },
-    
   },
   callbacks: {
-  async redirect({ url, baseUrl }) {
-    // Default: redirect to homepage
-    return baseUrl+"/home";
-  }
-}
-
+    async redirect({ url, baseUrl }) {
+      // Default: redirect to homepage
+      return baseUrl + "/home";
+    },
+  },
 });
