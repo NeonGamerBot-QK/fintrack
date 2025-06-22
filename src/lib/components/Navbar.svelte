@@ -8,7 +8,7 @@
     <a class="btn btn-ghost text-xl" href="/">FinTrack</a>
   </div>
   <div class="flex-none">
-    {#if data.session.user}
+    {#if data.session && data.session.user}
       <div class="dropdown dropdown-end">
         <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
           <div class="w-10 rounded-full">
