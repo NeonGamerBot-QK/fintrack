@@ -43,10 +43,18 @@ export const { handle, signIn, signOut } = SvelteKitAuth({
       } catch (e) {
         console.error(e);
       }
-
+      // update user profile to have accessToken
+      await prisma.user.update({
+        where: { id: user.id },
+        data: {
+          accessToken: account.access_token,
+          isFirstTimeLogin: isNewUser,
+        },
+      })
       console.log("User signed in:", user);
     },
   },
+
   callbacks: {
     async redirect({ url, baseUrl }) {
       // Default: redirect to homepage
