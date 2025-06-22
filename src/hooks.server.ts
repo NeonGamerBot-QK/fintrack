@@ -15,12 +15,12 @@ export const handle = SvelteKitAuth({
       clientSecret: GITHUB_CLIENT_SECRET,
       authorization: {
         params: {
-            scope: "repo user read:user",
+            scope: "repo user read:user public_repo",
         }
       }
     }),
   ],
-  
+
     events: {
     async signIn({ user, account, profile, isNewUser }) {
       // Runs AFTER sign-in
