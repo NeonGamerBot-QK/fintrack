@@ -1,6 +1,8 @@
 <script>
   import { Icon } from "svelte-icons-pack";
   import { AiFillGithub } from "svelte-icons-pack/ai";
+
+  import { signIn, signOut } from "@auth/sveltekit/client"
 </script>
 
 <div class="hero bg-base-200 min-h-screen">
@@ -11,13 +13,12 @@
         You prob need better gh project tracking right? Get ready to authorize
         with this amazing program!
       </p>
-      <!-- TODO: make this a fancy gh login button :0000 -->
-      <a
+      <button
         class="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 me-2 mb-2"
-        href="/api/github/login"
+       on:click={() => signIn("github")}
       >
         <Icon src={AiFillGithub} className="font-bold text-3xl" />
-        Login</a
+        Login</button
       >
     </div>
   </div>
