@@ -1,6 +1,6 @@
 <script lang="ts">
   import CreateModal from "$lib/components/CreateModal.svelte";
-  import { Modal, Content, Trigger } from "sv-popup"
+  import { Modal, Content, Trigger } from "sv-popup";
   export let data;
   // idk a page of repos maybe?
   export let projects = data.projects || [];
@@ -18,17 +18,16 @@
         <Content>
           <CreateModal />
         </Content>
-       <Trigger>
-      <button
-        class="btn btn-primary p-2 mt-10"
-        on:click={() => {
-          // fetch to form or smt
-          console.log("Create a project");
-        }}>Create a project, You have none right now :3</button
-      >
-    </Trigger>
-    </Modal>
+        <Trigger>
+          <button
+            class="btn btn-primary p-2 mt-10"
+            on:click={() => {
+              // fetch to form or smt
+              console.log("Create a project");
+            }}>Create a project, You have none right now :3</button
+          >
+        </Trigger>
+      </Modal>
     </div>
-
   {/if}
 </div>
