@@ -15,7 +15,7 @@
         class="input input-primary"
       />
     </div>
-     <div class="form-control">
+    <div class="form-control">
       <label for="name" class="mb-5 mr-5">Description:</label>
       <input
         type="text"
