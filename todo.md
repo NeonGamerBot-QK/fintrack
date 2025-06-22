@@ -1,8 +1,8 @@
 # list
-- [ ] make prisma db setup
+- [x] make prisma db setup
 - [ ] push gh repo public
-- [ ] make gh oauth work
-- [ ] make it auto star repo 
+- [x] make gh oauth work
+- [x] make it auto star repo 
 - [ ] make project browser good 
 - [ ] make project browser look nice
 - [ ] ship it

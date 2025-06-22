@@ -5,7 +5,7 @@
 
 <div class="navbar bg-base-100 shadow-sm">
   <div class="flex-1">
-    <a class="btn btn-ghost text-xl">FinTrack</a>
+    <a class="btn btn-ghost text-xl" href="/">FinTrack</a>
   </div>
   <div class="flex-none">
     {#if data.session.user}
@@ -13,7 +13,7 @@
         <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
           <div class="w-10 rounded-full">
             <img
-              alt="Tailwind CSS Navbar component"
+              alt="Avatar"
               src={data.session?.user?.image}
             />
           </div>
