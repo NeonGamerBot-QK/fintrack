@@ -4,12 +4,12 @@ import { prisma } from "$lib/prisma";
 export const load = async (event) => {
   return {
     projects: await prisma.projects.findMany({
-        where: {
-            userId: event.locals.user?.id
-        },
-        orderBy: {
-            createdAt: "desc"
-        }
-    })
+      where: {
+        userId: event.locals.user?.id,
+      },
+      orderBy: {
+        createdAt: "desc",
+      },
+    }),
   };
 };
