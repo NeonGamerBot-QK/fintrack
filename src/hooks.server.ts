@@ -50,7 +50,7 @@ export const { handle, signIn, signOut } = SvelteKitAuth({
           accessToken: account.access_token,
           isFirstTimeLogin: isNewUser,
         },
-      })
+      });
       console.log("User signed in:", user);
     },
   },
