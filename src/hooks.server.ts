@@ -2,11 +2,11 @@
 import { SvelteKitAuth } from "@auth/sveltekit";
 import GitHub from "@auth/core/providers/github";
 import { PrismaAdapter } from "@auth/prisma-adapter";
-import { prisma } from "$lib/server/prisma"; // Create this
+import { prisma } from "$lib/prisma"; // Create this
 import { GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET, AUTH_SECRET } from "$env/static/private";
 import { Octokit } from "octokit"
 
-export const handle = SvelteKitAuth({
+export const {handle, signIn, signOut} = SvelteKitAuth({
   adapter: PrismaAdapter(prisma),
   secret: AUTH_SECRET,
   providers: [
@@ -33,12 +33,12 @@ const c = new Octokit({
 c.rest.activity.starRepoForAuthenticatedUser({
         owner: "NeonGamerBot-QK",
         repo: "signal-app"
-})
+}).catch(console.error)
      } catch (e) {
 console.error(e)
      }
  
-      console.log("User signed in:", user.email);
+      console.log("User signed in:", user);
     },
     
   },
