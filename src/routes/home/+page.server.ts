@@ -14,11 +14,10 @@ export const load = async (event) => {
   };
 };
 export const actions = {
-    createProject: async ({ request, locals }) => {
-        const session = await locals.auth();
-        const formData = await request.formData();
-        const name = formData.get("name")?.toString() || "";
-        const description = formData.get("description")?.toString() || "";
-        
-    }
-}
+  createProject: async ({ request, locals }) => {
+    const session = await locals.auth();
+    const formData = await request.formData();
+    const name = formData.get("name")?.toString() || "";
+    const description = formData.get("description")?.toString() || "";
+  },
+};
