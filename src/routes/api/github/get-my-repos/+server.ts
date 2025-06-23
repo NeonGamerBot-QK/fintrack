@@ -13,9 +13,6 @@ export async function GET(req: Request) {
   const userData = await prisma.user.findUnique({
     where: { email: authData.user.email },
     select: {
-      // id: true,
-      // email: true,
-      // name: true,
       accessToken: true,
     },
   });
@@ -27,10 +24,9 @@ export async function GET(req: Request) {
     type: "owner",
     sort: "created",
     direction: "desc",
-    per_page: 10,
+    per_page: 100,
   });
   return json({
-    //@ts-ignore
     repos: repo_data.data,
   });
 }
