@@ -1,6 +1,7 @@
 <script>
-    export let project;
+  export let project;
 </script>
+
 <div class="card bg-base-100 w-96 shadow-sm">
   <!-- <figure class="px-10 pt-10">
     <img
