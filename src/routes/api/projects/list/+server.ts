@@ -1,8 +1,8 @@
 import { prisma } from "$lib/prisma";
 
 export async function GET(req: Request) {
-    // @ts-ignore
-      const authData = await req.locals.auth();
+  // @ts-ignore
+  const authData = await req.locals.auth();
   // get users session token
   // from auth.js cookie
   if (!authData.user) {
@@ -16,12 +16,12 @@ export async function GET(req: Request) {
   if (!userData) {
     return new Response("User not found", { status: 404 });
   }
-    return prisma.project.findMany({
-          where: {
-            userId:userData.id ,
-          },
-          orderBy: {
-            createdAt: "desc",
-          },
-        })
+  return prisma.project.findMany({
+    where: {
+      userId: userData.id,
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
 }
