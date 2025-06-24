@@ -25,27 +25,26 @@
         console.error("Error fetching projects:", err);
       });
   });
-  
-  function handleSubmit(e:any) {
+
+  function handleSubmit(e: any) {
     e.preventDefault();
-    fetch('/api/projects/create', {
+    fetch("/api/projects/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-
       },
       body: JSON.stringify({
         name,
         description,
         gh_repo,
         isAi,
-        isPersonal
-      })
+        isPersonal,
+      }),
     }).then((r) => {
-      alert('good')
-        console.log(`Project created: ${name}, ${description}, ${gh_repo}`);
-  r.text().then(alert)
-      })
+      alert("good");
+      console.log(`Project created: ${name}, ${description}, ${gh_repo}`);
+      r.text().then(alert);
+    });
   }
 </script>
 
@@ -73,7 +72,7 @@
           placeholder="This project does yadayayaya"
           class="input input-primary"
           minlength="2"
-          maxlength="100" 
+          maxlength="100"
           bind:value={description}
         />
       </div>
@@ -81,7 +80,11 @@
     <div class="inline-flex w-96">
       <div class="form-control">
         <label for="gh_repo">GH repo to link to:</label>
-        <select class="select select-accent" name="gh_repo" bind:value={gh_repo}>
+        <select
+          class="select select-accent"
+          name="gh_repo"
+          bind:value={gh_repo}
+        >
           {#each projects as project}
             <option value={project.id}>{project.full_name}</option>
           {/each}
@@ -90,22 +93,21 @@
       <br />
     </div>
     <div class="inline-flex">
-<fieldset class="fieldset rounded-box w-64 p-4">
-  <!-- <legend class="fieldset-legend">Login options</legend> -->
-  <label class="label">
-    <input type="checkbox" bind:checked={isAi} class="checkbox" />
-    Is Ai? (uses any type of ai generated code)
-  </label>
-</fieldset>
-<fieldset class="fieldset rounded-box w-64 p-4">
-  <!-- <legend class="fieldset-legend">Login options</legend> -->
-  <label class="label">
-    <input type="checkbox" bind:checked={isPersonal} class="checkbox" />
-  Personal project (your making this project for fun... and not for work/school)
-  </label>
-</fieldset>
-</div>
-    <button type="submit" class="btn btn-primary">Submit</button
-    >
+      <fieldset class="fieldset rounded-box w-64 p-4">
+        <!-- <legend class="fieldset-legend">Login options</legend> -->
+        <label class="label">
+          <input type="checkbox" bind:checked={isAi} class="checkbox" />
+          Is Ai? (uses any type of ai generated code)
+        </label>
+      </fieldset>
+      <fieldset class="fieldset rounded-box w-64 p-4">
+        <!-- <legend class="fieldset-legend">Login options</legend> -->
+        <label class="label">
+          <input type="checkbox" bind:checked={isPersonal} class="checkbox" />
+          Personal project (your making this project for fun... and not for work/school)
+        </label>
+      </fieldset>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
