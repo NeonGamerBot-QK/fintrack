@@ -16,20 +16,20 @@ export async function POST(req: Request) {
   if (!userData) {
     return new Response("User not found", { status: 404 });
   }
-    // check body
-    //@ts-ignore
-const body = await req.request.json();
+  // check body
+  //@ts-ignore
+  const body = await req.request.json();
 
-await prisma.project.create({
+  await prisma.project.create({
     data: {
-        name: body.name,
-        repo_id: body.gh_repo.toString() || null,
-        description: body.description || "",
-        isPersonal: body.isPersonal || false,
-        isAi: body.isAi || false,
-        userId: userData.id,
-    }
-})
+      name: body.name,
+      repo_id: body.gh_repo.toString() || null,
+      description: body.description || "",
+      isPersonal: body.isPersonal || false,
+      isAi: body.isAi || false,
+      userId: userData.id,
+    },
+  });
 
-return new Response("Project created successfully", { status: 201 });
+  return new Response("Project created successfully", { status: 201 });
 }
