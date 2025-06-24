@@ -1,5 +1,5 @@
 <script>
-   export  let data ;
+  export let data;
 
-console.log(data)
+  console.log(data);
 </script>
