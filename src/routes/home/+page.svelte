@@ -11,9 +11,9 @@
   <h1 class="text-xl font-bold">Welcome {data.session?.user?.name}</h1>
   <p>Here are your current projects</p>
   {#if projects.length > 0}
- {#each projects as proj}
-  <ProjectItem project={proj} />
- {/each}
+    {#each projects as proj}
+      <ProjectItem project={proj} />
+    {/each}
   {:else}
     <div>
       <Modal>
@@ -21,8 +21,7 @@
           <CreateModal />
         </Content>
         <Trigger>
-          <button
-            class="btn btn-primary p-2 mt-10"
+          <button class="btn btn-primary p-2 mt-10"
             >Create a project, You have none right now :3</button
           >
         </Trigger>
