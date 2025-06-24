@@ -13,7 +13,9 @@
     <h2 class="card-title">{project.name}</h2>
     <p>{project.description}</p>
     <div class="card-actions">
-      <a class="btn btn-primary" href={`/projects/${project.id}`}>View project</a>
+      <a class="btn btn-primary" href={`/projects/${project.id}`}
+        >View project</a
+      >
     </div>
   </div>
 </div>
