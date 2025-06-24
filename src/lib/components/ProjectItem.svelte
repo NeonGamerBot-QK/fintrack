@@ -9,11 +9,11 @@
       alt="Shoes"
       class="rounded-xl" />
   </figure> -->
-  <div class="card-body items-center text-center">
+  <div class="card-body items-center text-center bg-base-300">
     <h2 class="card-title">{project.name}</h2>
     <p>{project.description}</p>
     <div class="card-actions">
-      <button class="btn btn-primary">Buy Now</button>
+      <a class="btn btn-primary" href={`/projects/${project.id}`}>View project</a>
     </div>
   </div>
 </div>
