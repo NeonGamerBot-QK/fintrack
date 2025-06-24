@@ -14,7 +14,7 @@
     {#each projects as proj}
       <ProjectItem project={proj} />
     {/each}
-        <div class="mt-20">
+    <div class="mt-20">
       <Modal>
         <Content>
           <CreateModal />
@@ -31,7 +31,9 @@
           <CreateModal />
         </Content>
         <Trigger>
-          <button class="btn btn-primary p-2 mt-10">Create a project, You have none right now :3</button>
+          <button class="btn btn-primary p-2 mt-10"
+            >Create a project, You have none right now :3</button
+          >
         </Trigger>
       </Modal>
     </div>
