@@ -7,6 +7,8 @@
 - [ ] make project browser good
 - [ ] make project browser look nice
 - [ ] ship it
+- [ ] langauge graph
+- [ ] link hackatime/wakatime to match up w/ commits or code
 - if viral:
 - [ ] work on colab features
 - [ ] ai features

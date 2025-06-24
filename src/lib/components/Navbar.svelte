@@ -1,6 +1,6 @@
 <script>
   export let data;
-  import { signIn, signOut } from "@auth/sveltekit/client";
+  import { signOut } from "@auth/sveltekit/client";
 </script>
 
 <div class="navbar bg-base-100 shadow-sm">

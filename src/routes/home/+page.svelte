@@ -1,5 +1,6 @@
 <script lang="ts">
   import CreateModal from "$lib/components/CreateModal.svelte";
+  import ProjectItem from "$lib/components/ProjectItem.svelte";
   import { Modal, Content, Trigger } from "sv-popup";
   export let data;
   // idk a page of repos maybe?
@@ -9,9 +10,10 @@
 <div class="mt-10 ml-5">
   <h1 class="text-xl font-bold">Welcome {data.session?.user?.name}</h1>
   <p>Here are your current projects</p>
-  <!-- <div class="grid"></div> -->
   {#if projects.length > 0}
-    <p>projects existo</p>
+ {#each projects as proj}
+  <ProjectItem project={proj} />
+ {/each}
   {:else}
     <div>
       <Modal>
@@ -21,10 +23,7 @@
         <Trigger>
           <button
             class="btn btn-primary p-2 mt-10"
-            on:click={() => {
-              // fetch to form or smt
-              console.log("Create a project");
-            }}>Create a project, You have none right now :3</button
+            >Create a project, You have none right now :3</button
           >
         </Trigger>
       </Modal>
