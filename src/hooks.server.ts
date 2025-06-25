@@ -24,7 +24,7 @@ export const { handle, signIn, signOut } = SvelteKitAuth({
       },
     }),
   ],
-trustHost: true,
+  trustHost: true,
   events: {
     async signIn({ user, account, profile, isNewUser }) {
       // Runs AFTER sign-in
