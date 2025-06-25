@@ -2,7 +2,7 @@
   export let project;
 </script>
 
-<div class="card bg-base-100 w-96 shadow-sm">
+<div class="card bg-base-100 w-96 shadow-sm m-5">
   <!-- <figure class="px-10 pt-10">
     <img
       src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"

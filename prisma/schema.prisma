@@ -52,6 +52,7 @@ model Project {
   updatedAt   DateTime @updatedAt
   userId      String
   repo_id     String
+  repo_full_name String?
   isAi        Boolean  @default(false)
   isPersonal  Boolean  @default(false)
   isPublic    Boolean  @default(false)

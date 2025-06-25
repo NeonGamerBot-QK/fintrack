@@ -28,6 +28,9 @@
 
   function handleSubmit(e: any) {
     e.preventDefault();
+    // Find the selected repo's full_name
+    const selectedRepo = projects.find((p) => p.id == gh_repo);
+    const repo_full_name = selectedRepo ? selectedRepo.full_name : "";
     fetch("/api/projects/create", {
       method: "POST",
       headers: {
@@ -37,6 +40,7 @@
         name,
         description,
         gh_repo,
+        repo_full_name,
         isAi,
         isPersonal,
       }),

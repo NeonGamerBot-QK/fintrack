@@ -24,6 +24,7 @@ export async function POST(req: Request) {
     data: {
       name: body.name,
       repo_id: body.gh_repo.toString() || null,
+      repo_full_name: body.repo_full_name || "",
       description: body.description || "",
       isPersonal: body.isPersonal || false,
       isAi: body.isAi || false,
