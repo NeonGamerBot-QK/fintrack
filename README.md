@@ -1,5 +1,7 @@
 ![screenshot](./screenshot.png)
+
 # Fintrack
+
 A advanced github project tracker :3, this app you can create projects and manage hackatime linking, ai mangment (for the vibecoders), deadlines etc.
 
 ## Developing
