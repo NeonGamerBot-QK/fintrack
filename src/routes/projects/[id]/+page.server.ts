@@ -90,12 +90,14 @@ export const load = async (event) => {
           }
         }
         // Score by number of overlapping languages
-        const overlap = projLangs.filter(l => currentLangs.includes(l)).length;
+        const overlap = projLangs.filter((l) =>
+          currentLangs.includes(l),
+        ).length;
         scored.push({ ...proj, overlap });
       }
       // Sort by overlap descending, take top 3
       similarProjects = scored
-        .filter(p => p.overlap > 0)
+        .filter((p) => p.overlap > 0)
         .sort((a, b) => b.overlap - a.overlap)
         .slice(0, 3);
     }
