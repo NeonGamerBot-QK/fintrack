@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { onMount, onDestroy } from 'svelte';
-  import { Chart, registerables } from 'chart.js';
+  import { onMount, onDestroy } from "svelte";
+  import { Chart, registerables } from "chart.js";
 
   export let data;
 
@@ -18,10 +18,16 @@
       labels,
       datasets: [
         {
-          label: 'Language Breakdown',
+          label: "Language Breakdown",
           data: values,
           backgroundColor: [
-            '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40', '#C9CBCF',
+            "#FF6384",
+            "#36A2EB",
+            "#FFCE56",
+            "#4BC0C0",
+            "#9966FF",
+            "#FF9F40",
+            "#C9CBCF",
           ],
         },
       ],
@@ -31,7 +37,7 @@
   onMount(() => {
     if (chartData && canvas) {
       chart = new Chart(canvas, {
-        type: 'pie',
+        type: "pie",
         data: chartData,
         options: {
           responsive: true,
@@ -58,12 +64,17 @@
   {/if}
 
   <div class="mt-12">
-    <h3 class="font-bold text-lg mb-2">Similar Projects (AI Recommendations)</h3>
+    <h3 class="font-bold text-lg mb-2">
+      Similar Projects (AI Recommendations)
+    </h3>
     {#if data.similarProjects && data.similarProjects.length > 0}
       <ul class="list-disc ml-6">
         {#each data.similarProjects as proj}
           <li class="mb-2">
-            <a class="text-blue-600 hover:underline" href={`/projects/${proj.id}`}>{proj.name}</a>
+            <a
+              class="text-blue-600 hover:underline"
+              href={`/projects/${proj.id}`}>{proj.name}</a
+            >
             {#if proj.description}
               <span class="text-gray-500"> — {proj.description}</span>
             {/if}
