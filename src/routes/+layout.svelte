@@ -5,7 +5,7 @@
     import "./style.css"
 </script>
 <Navbar  data={data} />
-<div>
+<div class="bg-mauve-200">
     	{@render children()}
 </div>
 <Footer />

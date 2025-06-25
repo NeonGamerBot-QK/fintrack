@@ -1,6 +1,5 @@
 {
   "name": "fintrack",
-  "private": true,
   "version": "0.0.1",
   "type": "module",
   "scripts": {
@@ -23,6 +22,7 @@
   "dependencies": {
     "@auth/prisma-adapter": "^2.9.1",
     "@auth/sveltekit": "^1.9.2",
+    "@catppuccin/daisyui": "^2.1.1",
     "@libsql/client": "^0.15.9",
     "@mdi/js": "^7.4.47",
     "@tailwindcss/vite": "^4.1.10",
