@@ -6,7 +6,7 @@
 - [x] make it auto star repo
 - [ ] make project browser good
 - [ ] make project browser look nice
-- [ ] ship it
+- [x] ship it
 - [ ] langauge graph
 - [ ] link hackatime/wakatime to match up w/ commits or code
 - if viral:
