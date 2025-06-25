@@ -45,18 +45,18 @@ model Account {
 }
 
 model Project {
-  id          String   @id @default(cuid())
-  name        String
-  description String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  userId      String
-  repo_id     String
+  id             String   @id @default(cuid())
+  name           String
+  description    String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  userId         String
+  repo_id        String
   repo_full_name String?
-  isAi        Boolean  @default(false)
-  isPersonal  Boolean  @default(false)
-  isPublic    Boolean  @default(false)
-  isArchived  Boolean  @default(false)
+  isAi           Boolean  @default(false)
+  isPersonal     Boolean  @default(false)
+  isPublic       Boolean  @default(false)
+  isArchived     Boolean  @default(false)
 
   user User @relation(fields: [userId], references: [id])
 }
